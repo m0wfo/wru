@@ -50,7 +50,7 @@ if (typeof global != "undefined") {
             return id;
         }
 
-    })(new java.util.Timer(), {}, [].slice, 0);
+    })(typeof JavaAdapter === "undefined" ? java.util.concurrent.Executors.newSingleThreadScheduledExecutor() : new java.util.Timer(), {}, [].slice, 0);
 
 } else { // jsc specific hack
     !function (global, i, cbs, slice) {
